@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Car Animation</title>
+
+  <!-- Tailwind CSS (via CDN, no install needed) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Tall section: its extra height is the "scroll distance" for the animation -->
+  <section class="section">
+
+    <!-- Track stays stuck to the screen while we scroll through the section -->
+    <div class="track">
+
+      <!-- Road with the car, green trail and headline -->
+      <div class="road">
+        <div class="trail"></div>
+
+        <h1 class="value-add" id="headline">WELCOME ITZFIZZ</h1>
+
+        <!-- Top-view car facing right. To use your own image, replace this
+             <svg> with: <img src="car.png" alt="car" class="car-img" /> -->
+        <div class="car" id="car">
+          <svg viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" class="car-img" aria-label="car">
+            <g transform="translate(260,0) rotate(90)">
+              <path d="M60 4c24 0 40 14 42 44l4 62c1 28-2 60-6 90-2 30-18 52-40 52s-38-22-40-52c-4-30-7-62-6-90l4-62C20 18 36 4 60 4z" fill="#ff5a1f"/>
+              <path d="M60 14c16 0 28 10 30 32l-4 22H34l-4-22c2-22 14-32 30-32z" fill="#ff7a45"/>
+              <path d="M36 214c4 22 14 32 24 32s20-10 24-32z" fill="#e24a14"/>
+              <path d="M38 84c0-8 10-14 22-14s22 6 22 14l3 62c0 10-10 18-25 18s-25-8-25-18z" fill="#0b0f14"/>
+              <path d="M44 92c2-5 9-9 16-9s14 4 16 9l-3 14H47z" fill="#2b3b4d"/>
+              <rect x="30" y="22" width="16" height="5" rx="2.5" fill="#fff6c9"/>
+              <rect x="74" y="22" width="16" height="5" rx="2.5" fill="#fff6c9"/>
+              <rect x="30" y="236" width="18" height="4" rx="2" fill="#ff1f3d"/>
+              <rect x="72" y="236" width="18" height="4" rx="2" fill="#ff1f3d"/>
+              <rect x="4" y="52" width="12" height="34" rx="5" fill="#111"/>
+              <rect x="104" y="52" width="12" height="34" rx="5" fill="#111"/>
+              <rect x="2" y="178" width="14" height="38" rx="5" fill="#111"/>
+              <rect x="104" y="178" width="14" height="38" rx="5" fill="#111"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Four stat boxes (they fade in one by one while scrolling) -->
+      <div class="stat-box flex flex-col gap-1" id="box1">
+        <span class="num-box">58%</span>
+        <span>Increase in pick up point use</span>
+      </div>
+      <div class="stat-box flex flex-col gap-1" id="box2">
+        <span class="num-box">23%</span>
+        <span>Decreased in customer phone calls</span>
+      </div>
+      <div class="stat-box flex flex-col gap-1" id="box3">
+        <span class="num-box">27%</span>
+        <span>Increase in pick up point use</span>
+      </div>
+      <div class="stat-box flex flex-col gap-1" id="box4">
+        <span class="num-box">40%</span>
+        <span>Decreased in customer phone calls</span>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
